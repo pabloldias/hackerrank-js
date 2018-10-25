@@ -8,7 +8,7 @@ test('testcase 1', () => {
     expect(pickingNumbers([1, 2, 2, 3, 1, 2])).toBe(5);
 });
 
-test('testcase 2', () => {
+test('testcase 6', () => {
     expect(pickingNumbers(Array(100).fill(66))).toBe(100);
 });
 

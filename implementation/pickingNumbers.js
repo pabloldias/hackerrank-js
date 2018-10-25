@@ -5,9 +5,7 @@ function pickingNumbers(arr) {
     }, {});
     let maxNumber = 0;
     Object.keys(totals).sort().forEach((value, index, arr) => {
-        if (index === 0) {
-            maxNumber = totals[value];
-        }
+        maxNumber = Math.max(maxNumber, totals[value]);
         if ((index + 1 < arr.length) && (Math.abs(value - arr[index + 1]) === 1)) {
             maxNumber = Math.max(maxNumber, totals[value] + totals[arr[index + 1]]);
         }

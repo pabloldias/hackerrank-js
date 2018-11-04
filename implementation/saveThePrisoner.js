@@ -1,11 +1,4 @@
 function saveThePrisoner(prisoners, sweets, firstChair) {
-    if (prisoners === 1) {
-        return firstChair;
-    }
-    const chair = ((firstChair + sweets) % prisoners) - 1;
-    if (chair <= 0) {
-        return prisoners + chair;
-    } 
-    return chair;
+    return ((firstChair + sweets - 2) % prisoners) + 1;
 }
 module.exports = saveThePrisoner;

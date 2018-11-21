@@ -1,20 +1,15 @@
-function jumpingOnTheClouds(clouds, jump) {
-    const thunderhead = cloud => clouds[cloud] === 1 ? 2 : 0;
-
-    const landingClouds = num => {
-        const pos = ((num * jump) + jump);
-        if (pos < clouds.length) {
-            return pos;
+function jumpingOnTheClouds(clouds) {
+    let jumpCount = 0;
+    let cloud = 0;
+    const canJumpBy = num => ((cloud + num) < clouds.length) && (clouds[cloud + num] === 0);
+    while (cloud < clouds.length - 1) {
+        if (canJumpBy(2)) {
+            cloud = cloud + 2;
+        } else if (canJumpBy(1)) {
+            cloud = cloud + 1;
         }
-        return 0;
+        jumpCount++;
     }
-    
-    const jumps = Math.ceil(clouds.length / jump);
-
-    return [...Array(jumps).keys()]
-        .map(landingClouds)
-        .reduce((prev, curr) => {
-            return prev - 1 - thunderhead(curr)
-        }, 100);
+    return jumpCount;
 }
 module.exports = jumpingOnTheClouds;

@@ -1,9 +1,9 @@
 const jumpingOnTheClouds = require('./jumpingOnTheClouds');
 
-test('testcase 0', () => {
-    expect(jumpingOnTheClouds([0,0,1,0,0,1,1,0], 2)).toBe(92);
+test('sample testcase 0', () => {
+    expect(jumpingOnTheClouds([0,0,1,0,0,1,0])).toBe(4);
 });
 
-test('testcase 1', () => {
-    expect(jumpingOnTheClouds([1,1,1,0,1,1,0,0,0,0], 3)).toBe(94);
+test('sample testcase 1', () => {
+    expect(jumpingOnTheClouds([0,0,0,0,1,0])).toBe(3);
 });
